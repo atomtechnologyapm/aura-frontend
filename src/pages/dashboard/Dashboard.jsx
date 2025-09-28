@@ -18,7 +18,7 @@ function VisionStatCard({ title, value, change, bgGradient, icon }) {
         <Box 
             bg={bgGradient}
             p={6}
-            rounded="15px"
+            rounded="20px"
             position="relative"
             overflow="hidden"
             minH="120px"
@@ -28,12 +28,12 @@ function VisionStatCard({ title, value, change, bgGradient, icon }) {
                     <Text fontSize="xs" color="rgba(255,255,255,0.7)" mb={2} textTransform="uppercase" fontWeight="600">
                         {title}
                     </Text>
-                    <Text fontSize="xl" fontWeight="bold" color="white">
+                    <Text fontSize="2rem" fontWeight="bold" color="white">
                         {value}
                     </Text>
                 </Box>
                 <Box 
-                    bg="rgba(67, 24, 255, 0.2)"
+                    bg="rgba(148,0,211, 0.99)"
                     p={3}
                     rounded="12px"
                     border="1px solid rgba(67, 24, 255, 0.3)"
@@ -266,29 +266,30 @@ function Home() {
                     title="Today's Money"
                     value="$53,000"
                     change="+55%"
-                    bgGradient="linear-gradient(127deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)"
-                    icon={<CreditIcon size="18px" color="#01B574" />}
+                    bgGradient="linear-gradient(140deg,rgba(6, 11, 40, 0.49) 35%, rgba(75,0,130, 0.45) 100%)"
+                    icon={<CreditIcon size="18px" color="#FFFFFF" />}
                 />
                 <VisionStatCard 
                     title="Today's Users"
                     value="2,300"
                     change="+3%"
-                    bgGradient="linear-gradient(127deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)"
-                    icon={<GlobeIcon size="18px" color="#4FD1C7" />}
+                    bgGradient="linear-gradient(140deg,rgba(6, 11, 40, 0.49) 35%, rgba(75,0,130, 0.45) 100%)"
+                    icon={<GlobeIcon size="18px" color="#FFFFFF" />}
                 />
                 <VisionStatCard 
                     title="New Clients"
                     value="+3,462"
                     change="-2%"
-                    bgGradient="linear-gradient(127deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)"
-                    icon={<DocumentIcon size="18px" color="#4FD1C7" />}
+                    bgGradient="linear-gradient(140deg,rgba(6, 11, 40, 0.49) 35%, rgba(75,0,130, 0.45) 100%)"
+                    icon={<DocumentIcon size="18px" color="#FFFFFF" />}
                 />
                 <VisionStatCard 
                     title="Sales"
                     value="$103,430"
                     change="+5%"
-                    bgGradient="linear-gradient(127deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)"
-                    icon={<ShoppingIcon size="18px" color="#4FD1C7" />}
+                    bgGradient="linear-gradient(140deg,rgba(6, 11, 40, 0.49) 35%, rgba(75,0,130, 0.45) 100%)"
+                    // bgGradient="linear-gradient(127deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)"
+                    icon={<ShoppingIcon size="18px" color="#FFFFFF" />}
                 />
             </Grid>
 
