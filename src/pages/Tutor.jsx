@@ -1,6 +1,6 @@
 import Sidebar from "../components/Sidebar";
 
-export default function Profile() {
+export default function Tutor() {
     return (
         <>
             <div

@@ -159,8 +159,7 @@ export default function Sidebar({ onLogout, currentPath = "/dashboard" }) {
                         <div className={`sidebar-menu-item ${isActiveItem(item.path) ? 'sidebar-menu-item-active' : 'sidebar-menu-item-inactive'}`}>
                             {isCollapsed ? item.icon : (
                                 <>
-                                    {item.icon}
-                                    <span style={{ marginLeft: '8px' }}>{item.label}</span>
+                                    <span>{item.label}</span>
                                 </>
                             )}
                         </div>
