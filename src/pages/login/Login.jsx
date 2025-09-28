@@ -3,23 +3,51 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 export default function Login() {
-    const [user, setUser] = useState("admin@aura.com.br");
-    const [pass, setPass] = useState("aura123");
+    const [user, setUser] = useState("");
+    const [pass, setPass] = useState("");
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
         console.log("Login button clicked");
         
-        // Login automático - qualquer entrada é aceita
-        localStorage.setItem("token", "fake-token");
-        console.log("Token set:", localStorage.getItem("token"));
-        
-        // Usar setTimeout para garantir que o token seja definido antes da navegação
-        setTimeout(() => {
-            console.log("Navigating to dashboard...");
-            navigate("/dashboard");
-        }, 100);
+        // Validação de usuários específicos
+        const validUsers = {
+            "luiz@aura.com.br": {
+                password: "aura123",
+                name: "Luiz Augusto",
+                role: "Administrator"
+            },
+            "francismario@aura.com.br": {
+                password: "aura123", 
+                name: "Francismario Coelho",
+                role: "Administrator"
+            }
+        };
+
+        // Verificar se email e senha são válidos
+        if (validUsers[user] && validUsers[user].password === pass) {
+            // Salvar dados do usuário no localStorage
+            const userData = {
+                email: user,
+                name: validUsers[user].name,
+                role: validUsers[user].role,
+                token: "fake-token"
+            };
+            
+            localStorage.setItem("user", JSON.stringify(userData));
+            localStorage.setItem("token", "fake-token");
+            console.log("User logged in:", userData);
+            
+            // Navegar para dashboard
+            setTimeout(() => {
+                console.log("Navigating to dashboard...");
+                navigate("/dashboard");
+            }, 100);
+        } else {
+            // Exibir erro de login
+            alert("Email ou senha inválidos! Use: luiz@aura.com.br ou francismario@aura.com.br com senha: aura123");
+        }
     };
 
     return (
